@@ -208,6 +208,8 @@ main{
     background-image: url(../img/fundo3.jpg);
     background-color: #0006;
     background-blend-mode: darken;
+    background-size: cover;
+  background-position: center;
   }
 
   .links-container{
