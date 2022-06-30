@@ -202,6 +202,8 @@ main{
   transform: rotate(-45deg);
 }
 
+/* Configuração da responsividade do site */
+
 @media (max-width: 768px){
   body{
     padding: 30px 30px 25px 30px;
