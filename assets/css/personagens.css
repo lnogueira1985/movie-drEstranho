@@ -79,7 +79,47 @@ header{
   
 }
 
+/* Media queri */
 
+@media (max-width: 768px){
+
+  body{
+    padding: 30px 30px 25px 30px;
+    background-image: url(../img/fundo3.jpg);
+    background-color: #0006;
+    background-blend-mode: darken;
+    background-size: cover;
+  background-position: center;
+  }
+
+
+  .links-container{
+    position: absolute;
+    top:0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 65px;
+    font-size: 2.5rem;
+    background-color: #000;
+    transform: translateX(100%);
+    opacity: 0;
+    z-index: 1;
+    transition: all 1s;
+  }
+
+  .menu-burger-container.active ~ .links-container{
+    opacity: 1;
+    transform: translateX(0%);
+  }
+
+  .menu-burger-container{
+    display: flex;
+  }
+}
 
 
 @keyframes zoom {
