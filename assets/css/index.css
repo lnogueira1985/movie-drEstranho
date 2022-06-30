@@ -1,0 +1,274 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200;0,300;0,400;0,500;0,700;1,300&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Smooch&display=swap');
+
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  font-family: 'Mulish', sans-serif;
+}
+
+a{
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+html, body{
+  position: relative;
+  overflow: hidden;
+}
+
+body{
+  height: 100vh;
+  background: linear-gradient(90deg, #000, #000e 35%, #0000), url(../img/fundo3.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: right;
+  display: flex;
+  flex-direction: column;
+  padding: 80px 128px 50px 128px;
+  animation: zoom .4s;
+}
+
+header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;  
+}
+
+.links-container{
+  display: flex;
+  gap: 34px; 
+}
+
+.links-container a{
+  text-shadow: 2px 2px 2px #000;
+  padding: 6px;
+  transition: all .5s;
+  border-radius: 2px;
+}
+
+.links-container a:hover{
+  background-color: #e62721;
+}
+
+main{
+  display: flex;
+  flex-grow: 1;
+}
+
+.content-container{
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: white;
+}
+
+.content-container h1{
+  font-size: 7rem;
+  display: flex;
+  flex-direction: column;
+  font-weight: 400; 
+}
+
+.content-container h1 span{
+  font-size: 2rem;
+  font-weight: 200;
+  transform: translateY(30px);
+}
+
+.movie-title{
+  font-size: 2.6rem;
+  font-style: italic;
+  text-transform: uppercase;
+  color: #e62721;
+  transform: translateY(-20px);
+}
+
+.movie-text{
+  width: 550px;
+  font-size: 1.1rem;
+  font-weight: 100;
+}
+
+.movie-button{
+  height: 80px;
+  width: 300px;
+  background-color: #e62721;
+  border-radius: 10px;
+  font-size: 1.5rem;
+  font-weight: 200;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+  opacity: 0.5;
+}
+
+.movie-button:hover{
+  opacity: 1;
+  transition: all 1s;
+}
+
+.social-container{
+  width: 48px;
+}
+
+.social-container ul{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: center;
+  gap: 20px;
+}
+
+.social-container li{
+  height: 48px;
+  width: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  border: 2px solid white;
+  transition: all .8s;
+}
+
+.social-container i{
+  font-size: 1.5rem;
+}
+
+.social-container li:hover{
+  background-color: #e62721;
+  border-color: #e62721;
+}
+
+.footer{
+  text-align: center;  
+  color: white;
+}
+
+.footer span{
+  font-size: 2rem;
+  font-family: 'Smooch', cursive;
+}
+
+.menu-burger-container{
+  position: absolute;
+  display: none;
+  align-items: center;
+  top: 30px;
+  right: 30px;
+  height: 36px;
+  width: 36px;
+  z-index: 2;
+}
+
+.menu-burger,
+.menu-burger::before,
+.menu-burger::after{
+  position: absolute;
+  content: "";
+  display: block;
+  background-color: #fff;
+  height: 4px;
+  width: 36px;
+  border-radius: 5px;
+  transition: all  1s;
+}
+
+.menu-burger::before{
+  transform: translateY(-12px);
+}
+.menu-burger::after{
+  transform: translateY(12px);
+}
+
+.menu-burger-container.active .menu-burger{
+  background-color: transparent;
+}
+
+.menu-burger-container.active .menu-burger::before{
+  transform: rotate(45deg);
+}
+
+.menu-burger-container.active .menu-burger::after{
+  transform: rotate(-45deg);
+}
+
+@media (max-width: 768px){
+  body{
+    padding: 30px 30px 25px 30px;
+    background-image: url(../img/fundo3.jpg);
+    background-color: #0006;
+    background-blend-mode: darken;
+  }
+
+  .links-container{
+    position: absolute;
+    top:0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 65px;
+    font-size: 2.5rem;
+    background-color: #000;
+    transform: translateX(100%);
+    opacity: 0;
+    z-index: 1;
+    transition: all 1s;
+  }
+
+  .menu-burger-container.active ~ .links-container{
+    opacity: 1;
+    transform: translateX(0%);
+  }
+
+  .menu-burger-container{
+    display: flex;
+  }
+
+  .content-container{
+    justify-content: flex-end;
+    margin-bottom: 50px;
+  }
+
+  .content-container h1{
+    font-size: 4rem;
+  }
+  .content-container h1 span{
+    font-size: 1.5rem;
+    transform: translateY(15px)
+  }
+
+  .movie-title{
+    font-size: 1.45rem;
+    transform: translateY(5px)
+  }
+  .movie-text{
+    display: none;
+  }
+
+  .social-container{
+    display: none;
+  }
+  
+}
+
+@keyframes zoom {
+  0%{
+      transform: scale(3);
+  }
+  100%{
+      transform: scale(1);
+  }
+}
